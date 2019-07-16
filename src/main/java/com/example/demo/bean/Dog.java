@@ -3,7 +3,7 @@ package com.example.demo.bean;
 public class Dog {
     private String name;
     private Integer age;
-
+    private int i;
     public String getName() {
         return name;
     }
