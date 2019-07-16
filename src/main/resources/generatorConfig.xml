@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="C:\Users\daming\.m2\repository\mysql\mysql-connector-java\5.1.30"/>
+    <context id="context1">
+
+        <!-- 1.关闭自动生成注释(给生成文件的注释太多了,影响读程序) -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 2.连接数据库 -->
+        <jdbcConnection
+                connectionURL="jdbc:mysql://localhost:3306/ruigou?serverTimezone=UTC&amp;useSSL=true"
+                driverClass="com.mysql.jdbc.Driver"
+                userId="root"
+                password="123456"
+        />
+
+        <!-- 3.指定javabean生成位置 -->
+        <javaModelGenerator targetPackage="com.neusoft.bean" targetProject="./src/main/java" />
+
+        <!-- 4.指定sql.mapper映射文件生成位置 -->
+        <sqlMapGenerator targetPackage="com.neusoft.mapper" targetProject="./src/main/resources" />
+
+        <!-- 5.指定sql.interface接口生成位置 -->
+        <javaClientGenerator targetPackage="com.neusoft.dao" targetProject="./src/main/java" type="XMLMAPPER" />
+
+        <!-- 6.table指定生成策略 -->
+        <table tableName="tb_content" domainObjectName="Content"></table>
+        <table tableName="tb_content_category" domainObjectName="ContentCategory"></table>
+        <table tableName="tb_item" domainObjectName="Item"></table>
+        <table tableName="tb_item_cat" domainObjectName="ItemCat"></table>
+        <table tableName="tb_item_desc" domainObjectName="ItemDesc"></table>
+        <table tableName="tb_item_param" domainObjectName="ItemParam"></table>
+        <table tableName="tb_item_param_item" domainObjectName="ItemParamItem"></table>
+        <table tableName="tb_order" domainObjectName="Order"></table>
+        <table tableName="tb_order_item" domainObjectName="OrderItem"></table>
+        <table tableName="tb_order_shipping" domainObjectName="OrderShipping"></table>
+        <table tableName="tb_user" domainObjectName="User"></table>
+
+    </context>
+</generatorConfiguration>
